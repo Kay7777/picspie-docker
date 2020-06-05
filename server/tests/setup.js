@@ -4,7 +4,4 @@ require("../models/user");
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+mongoose.connect("mongodb://mongo:27017/picspie");

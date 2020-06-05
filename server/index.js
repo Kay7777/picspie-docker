@@ -7,12 +7,7 @@ const cookieSession = require("cookie-session");
 const { json } = require("body-parser");
 app.use(json());
 
-mongoose
-  .connect(keys.mongoURI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  })
-  .catch((err) => console.log(err));
+mongoose.connect(keys.mongoURI);
 
 app.use(
   cookieSession({
