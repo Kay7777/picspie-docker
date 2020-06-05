@@ -3,3 +3,4 @@
 /config/dev.js
 /package-lock.json
 /dump.rdb
+/Dockerfile.dev
