@@ -5,11 +5,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t kaysongdocker/picspie-react -f ./client/Dockerfile.dev ./client
+  - docker build -t kaysongdocker/picspie-client -f ./client/Dockerfile.dev ./client
   - docker build -t kaysongdocker/picspie-server -f ./server/Dockerfile.dev ./server
 
 script:
-  - docker run kaysongdocker/picspie-react
+  - docker run kaysongdocker/picspie-client
   - docker run -e CI=true kaysongdocker/picspie-server npm run test
 
 after_success:

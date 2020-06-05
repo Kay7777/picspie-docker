@@ -1,7 +1,4 @@
 /docker-compose.yml
-/nginx/Dockerfile.dev
-/client/Dockerfile.dev
-/server/Dockerfile.dev
 
 # client
 /client/node_modules
