@@ -18,6 +18,7 @@
     {
       "name": "nginx",
       "image": "kaysongdocker/picspie-nginx",
+      "hostname": "nginx",
       "essential": true,
       "posrtMappings": [
         {
