@@ -7,9 +7,11 @@ services:
 before_install:
   - docker build -t kaysongdocker/picspie-client -f ./client/Dockerfile.dev ./client
   - docker build -t kaysongdocker/picspie-server -f ./server/Dockerfile.dev ./server
+  - docker build -t kaysongdocker/picspie-nginx -f ./nginx/Dockerfile.dev ./nginx
 
 script:
   - docker run kaysongdocker/picspie-client
+  - docker run kaysongdocker/picspie-nginx
   - docker run -e CI=true kaysongdocker/picspie-server npm run test
 
 after_success:
