@@ -13,7 +13,8 @@
       "image": "kaysongdocker/picspie-server",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "links": ["redis"]
     },
     {
       "name": "nginx",
@@ -27,6 +28,19 @@
         }
       ],
       "links": ["client", "server"],
+      "memory": 128
+    },
+    {
+      "name": "redis",
+      "image": "redis",
+      "hostname": "redis",
+      "essential": false,
+      "portMappings": [
+        {
+          "hostPort": 6379,
+          "containerPort": 6379
+        }
+      ],
       "memory": 128
     }
   ]

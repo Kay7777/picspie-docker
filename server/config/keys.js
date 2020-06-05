@@ -9,4 +9,5 @@ module.exports = {
   region: process.env.AWS_REGION,
   redisHost: process.env.REDIS_HOST,
   redisPort: process.env.REDIS_PORT,
+  domain: process.env.DOMAIN,
 };
