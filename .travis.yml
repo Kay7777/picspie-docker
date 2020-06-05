@@ -28,8 +28,8 @@ deploy:
   edge: true
   provider: elasticbeanstalk
   region: ca-central-1
-  app: PicsPie
-  env: Picspie-env
+  app: PicsPie2
+  env: Picspie2-env
   bucket_name: picspie
   bucket_path: docker
   on:
