@@ -32,7 +32,7 @@ const Header = (props) => {
               </a>
             </li>
             <li className="nav-item ">
-              <a className="nav-link" href="/auth/logout">
+              <a className="nav-link" href="/api/logout">
                 Log Out
               </a>
             </li>

@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount = async () => {
-    const doc = await axios.get("/auth/current_user");
+    const doc = await axios.get("/api/current_user");
     this.props.setCurrentUser(doc.data);
   };
 

@@ -1,0 +1,5 @@
+# for server side
+/node_modules
+/config/dev.js
+/package-lock.json
+/dump.rdb

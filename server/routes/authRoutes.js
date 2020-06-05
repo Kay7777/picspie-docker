@@ -19,14 +19,14 @@ module.exports = (app) => {
   });
 
   app.get(
-    "/auth/google",
+    "/api/google",
     passport.authenticate("google", {
       scope: ["profile", "email"],
     })
   );
 
   app.get(
-    "/auth/google/callback",
+    "/api/google/callback",
     passport.authenticate("google"),
     (req, res) => {
       res.redirect("/");
@@ -59,12 +59,12 @@ module.exports = (app) => {
     res.send({ message: "signup successfully" });
   });
 
-  app.get("/auth/current_user", (req, res) => {
+  app.get("/api/current_user", (req, res) => {
     console.log("auth/current_user: ", req.user);
     res.send(req.user);
   });
 
-  app.get("/auth/logout", (req, res) => {
+  app.get("/api/logout", (req, res) => {
     req.logout();
     res.redirect("/signin");
   });

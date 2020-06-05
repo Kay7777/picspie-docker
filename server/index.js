@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const passport = require("passport");
-// const flash = require("express-flash");
 const keys = require("./config/keys");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -36,15 +35,6 @@ require("./services/cache");
 require("./routes/authRoutes")(app);
 require("./routes/postRoutes")(app);
 require("./routes/commentRoutes")(app);
-
-if (["production", "ci"].includes(process.env.NODE_ENV)) {
-  app.use(express.static("client/build"));
-
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve("client", "build", "index.html"));
-  });
-}
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log("Listen to 4000"));
