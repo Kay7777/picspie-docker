@@ -12,6 +12,7 @@ before_install:
 script:
   - docker run kaysongdocker/picspie-client
   - docker run kaysongdocker/picspie-nginx
+  - docker run kaysongdocker/picspie-server
   - docker run -e CI=true kaysongdocker/picspie-server npm run test
 
 after_success:
@@ -22,15 +23,16 @@ after_success:
   - docker push kaysongdocker/picspie-clinet
   - docker push kaysongdocker/picspie-server
   - docker push kaysongdocker/picspie-nginx
-# deploy:
-#   edge: true
-#   provider: elasticbeanstalk
-#   region: ca-central-1
-#   app: PicsPie
-#   env: Picspie-env
-#   bucket_name: picspie
-#   bucket_path: docker
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: ca-central-1
+  app: PicsPie
+  env: Picspie-env
+  bucket_name: picspie
+  bucket_path: docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
