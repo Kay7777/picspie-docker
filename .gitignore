@@ -1,4 +1,5 @@
 /docker-compose.yml
+/Dockerrun.aws-backup.json
 
 # client
 /client/node_modules

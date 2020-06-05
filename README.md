@@ -28,6 +28,10 @@ also Implemented image upload with AWS S3 and aws-sdk library.
 2. Added Jest integretion testing
 3. Connected to Travis CI
 
+## 2020.06.05
+
+1. Dockerize the client and server side, and use nginx as the reverse proxy
+
 ## TODO List -- features :
 
 1. Multiple images upload
