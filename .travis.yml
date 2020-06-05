@@ -20,7 +20,7 @@ after_success:
   - docker build -t kaysongdocker/picspie-server ./server
   - docker build -t kaysongdocker/picspie-nginx ./nginx
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push kaysongdocker/picspie-clinet
+  - docker push kaysongdocker/picspie-client
   - docker push kaysongdocker/picspie-server
   - docker push kaysongdocker/picspie-nginx
 
