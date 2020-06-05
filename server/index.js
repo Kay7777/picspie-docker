@@ -7,7 +7,10 @@ const cookieSession = require("cookie-session");
 const { json } = require("body-parser");
 app.use(json());
 
-mongoose.connect("mongodb://mongo:27017/picspie");
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(
   cookieSession({
