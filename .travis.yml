@@ -16,7 +16,7 @@ services:
 #   - docker run -e CI=true kaysongdocker/picspie-server npm run test
 
 after_success:
-  - docker build -t kaysongdocker/picspie-clinet ./client
+  - docker build -t kaysongdocker/picspie-client ./client
   - docker build -t kaysongdocker/picspie-server ./server
   - docker build -t kaysongdocker/picspie-nginx ./nginx
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
