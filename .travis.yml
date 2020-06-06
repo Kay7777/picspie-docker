@@ -11,8 +11,9 @@ before_install:
 
 script:
   - docker run kaysongdocker/picspie-nginx
-  - docker run kaysongdocker/picspie-server
+  - sleep 3
   - docker run kaysongdocker/picspie-client
+  - sleep 3
   - docker run -e CI=true kaysongdocker/picspie-server npm run test
 
 # local test: docker run picspiedocker_api npm run test
