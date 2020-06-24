@@ -7,7 +7,8 @@
 3. Authetication: Passport, Google-OAuth2.0, local-strategy, cookie-session
 4. Database: MongoDB, AWS S3, Redis
 5. Testing: Jest, Puppeteer, safe-buffer, keygrip
-6. Dev tools: Github, Postman, Travis CI, Heroku, BootStrap
+6. Service: Nginx, AWS Elastic Beanstalker
+7. Dev tools: Docker, Github, Postman, Travis CI, Heroku, BootStrap
 
 ## 2020.05.20
 
@@ -30,7 +31,8 @@ also Implemented image upload with AWS S3 and aws-sdk library.
 
 ## 2020.06.05
 
-1. Dockerize the client and server side, and use nginx as the reverse proxy
+1. Dockerized the client and server side, and use nginx as the web service.
+2. Implemented CI pipe with Travis CI and AWS Elastic Beanstalker.
 
 ## TODO List -- features :
 
