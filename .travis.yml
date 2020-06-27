@@ -1,4 +1,9 @@
-language: generic
+language: node_js
+node_js:
+  - 13
+env:
+  - NODE_ENV=TEST
+
 sudo: required
 
 services:
