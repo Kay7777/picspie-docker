@@ -1,9 +1,11 @@
 jest.setTimeout(30000);
+
 require("../models/user");
+const keys = require("../config/keys");
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://127.0.0.1:27017/picspie", {
-  useNewUrlParser: true,
+mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
+  useNewUrlParser: true,
 });

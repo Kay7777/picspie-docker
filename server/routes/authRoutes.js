@@ -56,7 +56,7 @@ module.exports = (app) => {
       username: req.body.username,
     }).save();
     console.log("SIGNUP: Get user infor from database", user);
-    res.send({ message: "signup successfully" });
+    res.status(201).send(user);
   });
 
   app.get("/api/current_user", (req, res) => {

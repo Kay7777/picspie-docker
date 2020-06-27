@@ -24,6 +24,6 @@ test("Google OAuth signin", async () => {
 
 test("After signin, show Log Out Button", async () => {
   await page.login();
-  const text = await page.getContentsOf('a[href="/auth/logout"]');
+  const text = await page.getContentsOf('a[href="/api/logout"]');
   expect(text).toEqual("Log Out");
 });

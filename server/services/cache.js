@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 const redis = require("redis");
 const util = require("util");
-const keys = require("../config/keys");
 const client = redis.createClient({
-  host: keys.redisHost,
-  port: keys.redisPort,
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT,
   retry_strategy: () => 1000,
 });
 client.hget = util.promisify(client.hget);

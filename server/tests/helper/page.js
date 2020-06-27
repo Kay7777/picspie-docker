@@ -5,8 +5,8 @@ const userFactory = require("../factory/user");
 class CustomPage {
   static async build() {
     const browser = await puppeteer.launch({
-      executablePath: process.env.CHROME_BIN || null,
-      args: ["--no-sandbox", "--headless", "--disable-gpu"],
+      headless: true,
+      args: ["--no-sandbox"],
     });
 
     const page = await browser.newPage();
@@ -29,7 +29,7 @@ class CustomPage {
     await this.page.setCookie({ name: "session", value: session });
     await this.page.setCookie({ name: "session.sig", value: sig });
     await this.page.goto("http://localhost:3050");
-    await this.page.waitFor('a[href="/auth/logout"]');
+    await this.page.waitFor('a[href="/api/logout"]');
   }
 
   async getContentsOf(selector) {

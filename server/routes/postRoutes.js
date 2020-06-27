@@ -2,15 +2,14 @@ const mongoose = require("mongoose");
 const Post = mongoose.model("posts");
 const User = mongoose.model("users");
 const AWS = require("aws-sdk");
-const keys = require("../config/keys");
 const uuid = require("uuid/v1");
 const requireLogin = require("../middlewares/requireLogin");
 const cleanCache = require("../middlewares/cleanCache");
 
 const s3 = new AWS.S3({
-  accessKeyId: keys.AWSKeyId,
-  secretAccessKey: keys.AWSSecretKey,
-  region: keys.region,
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+  region: process.env.AWS_REGION,
 });
 
 module.exports = (app) => {
@@ -19,7 +18,7 @@ module.exports = (app) => {
     s3.getSignedUrl(
       "putObject",
       {
-        Bucket: keys.Bucket,
+        Bucket: process.env.AWS_BUCKET,
         ContentType: "image/jpeg",
         Key: key,
       },
