@@ -3,3 +3,5 @@
 
 # server
 /server/node_modules
+
+/docker-compose-backup.yml
