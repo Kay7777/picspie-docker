@@ -1,28 +1,16 @@
-language: node_js
-node_js:
-  - "13"
-
-dist: trusty
-
-env:
-  - NODE_ENV=ci PORT=3000
-
 sudo: required
 
 services:
   - docker
 
+env:
+  DOCKER_COMPOSE_VERSION: 1.25.5
+
 before_install:
-  - docker build -t kaysongdocker/picspie-client -f ./client/Dockerfile.dev ./client
-  - docker build -t kaysongdocker/picspie-server -f ./server/Dockerfile.dev ./server
-  - docker build -t kaysongdocker/picspie-nginx -f ./nginx/Dockerfile.dev ./nginx
+  - docker-compose up --build
 
 script:
-  - docker run -it -p 3050:80 kaysongdocker/picspie-nginx
-  - sleep 3
-  - docker run kaysongdocker/picspie-client
-  - sleep 3
-  - docker run -e CI=true kaysongdocker/picspie-server npm run test
+  - docker-compose exec npm run test --prefix server
 
 # local test: docker run picspiedocker_api npm run test
 after_success:
