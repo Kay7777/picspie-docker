@@ -4,5 +4,6 @@
 # server
 /server/node_modules
 
-/docker-compose.yml
+
 /docker-compose.test.yml
+/docker-compose.yml
