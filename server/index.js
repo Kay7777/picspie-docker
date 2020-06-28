@@ -5,7 +5,7 @@ const passport = require("passport");
 const keys = require("./config/keys");
 const { json } = require("body-parser");
 app.use(json());
-
+process.env.NODE_ENV = "dev";
 const cookieSession = require("cookie-session");
 app.use(
   cookieSession({
@@ -14,7 +14,7 @@ app.use(
     maxAge: 1000 * 60 * 30,
   })
 );
-
+console.log("-=-=-=-=-==-=-=-=-" + process.env.NODE_ENV);
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,

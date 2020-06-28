@@ -42,6 +42,19 @@
         }
       ],
       "memory": 128
+    },
+    {
+      "name": "mongo",
+      "image": "mongo",
+      "hostname": "mongo",
+      "essential": false,
+      "portMappings": [
+        {
+          "hostPort": 27017,
+          "containerPort": 27017
+        }
+      ],
+      "memory": 128
     }
   ]
 }

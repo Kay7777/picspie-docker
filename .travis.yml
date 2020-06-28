@@ -1,6 +1,11 @@
 language: node_js
 node_js:
-  - 13
+  - "13"
+
+dist: trusty
+
+env:
+  - NODE_ENV=ci PORT=3000
 
 sudo: required
 

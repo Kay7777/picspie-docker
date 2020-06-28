@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon",
+    "dev": "nodemon index.js",
     "test": "jest"
   },
   "keywords": [],
